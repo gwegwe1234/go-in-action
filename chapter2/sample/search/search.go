@@ -7,7 +7,7 @@ import (
 
 var matchers = make(map[string]Matcher)
 
-func Run(searchTerm string)  {
+func Run(searchTerm string) {
 	// 검색할 피드의 목록 조회
 	feeds, err := RetrieveFeeds()
 	if err != nil {
@@ -25,7 +25,7 @@ func Run(searchTerm string)  {
 	waitGroup.Add(len(feeds))
 
 	// 각기 다른 종류의 피드를 처리할 고루틴을 실행
-	for _, feed :=  range feeds {
+	for _, feed := range feeds {
 		// 검색을 위해 검색기 조회
 		matcher, exists := matchers[feed.Type]
 		if !exists {
@@ -53,7 +53,7 @@ func Run(searchTerm string)  {
 }
 
 // 프로그램에서 사용할 검색기를 등롣할 함수를 정의한다
-func Register(feedType string, matcher Matcher)  {
+func Register(feedType string, matcher Matcher) {
 	if _, exists := matchers[feedType]; exists {
 		log.Fatalln(feedType, "검색기가 이미 등록되었습니다")
 	}

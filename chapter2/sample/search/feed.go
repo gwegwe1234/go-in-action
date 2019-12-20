@@ -9,11 +9,11 @@ const dataFile = "./src/github.com/gwegwe1234/go-in-action/chapter2/sample/data/
 
 type Feed struct {
 	Name string `json:"site"`
-	URI string `json:"link"`
+	URI  string `json:"link"`
 	Type string `json:"type"`
 }
 
-func RetrieveFeeds() ([]*Feed, error)  {
+func RetrieveFeeds() ([]*Feed, error) {
 	// 파일을 연다
 	file, err := os.Open(dataFile)
 	if err != nil {
