@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main()  {
+func main() {
 	var slice []int
 
 	slice2 := make([]int, 0)

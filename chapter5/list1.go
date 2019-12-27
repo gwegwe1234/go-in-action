@@ -4,7 +4,7 @@ import "fmt"
 
 // 프로그램의 사용자를 표현하는 user 타입
 type user struct {
-	name string
+	name  string
 	email string
 }
 
@@ -18,7 +18,7 @@ func (u *user) changeEmail(email string) {
 	u.email = email
 }
 
-func main()  {
+func main() {
 	// user 타입의 값을 이용하여 값 수신자(receiver)에 선언한 메소드 호출
 	ted := user{"ted", "ted.park@dododada.net"}
 	ted.notify()

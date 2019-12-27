@@ -5,11 +5,11 @@ package main
 import "fmt"
 
 type user struct {
-	name string
+	name  string
 	email string
 }
 
-func (u *user) notify()  {
+func (u *user) notify() {
 	fmt.Printf("사용자에게 메일을 전송합니다: %s<%s>\n", u.name, u.email)
 }
 
@@ -18,15 +18,14 @@ type admin struct {
 	level string
 }
 
-func main()  {
+func main() {
 	// admin 타입의 사용자를 생성
-	bennie := admin {
-		user : user{
-			name : "bennie.maru",
-			email : "bennie.maru@ddeokboggi.com",
-
+	bennie := admin{
+		user: user{
+			name:  "bennie.maru",
+			email: "bennie.maru@ddeokboggi.com",
 		},
-		level : "super",
+		level: "super",
 	}
 
 	// 내부 타입의 메소드를 바로 호출할 수 있다.

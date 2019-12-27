@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"sync/atomic"
 	"time"
-	"sync"
 )
 
 var (
@@ -13,7 +13,7 @@ var (
 	wg sync.WaitGroup
 )
 
-func main()  {
+func main() {
 	wg.Add(2)
 
 	go doWork("A")
@@ -29,7 +29,7 @@ func main()  {
 	wg.Wait()
 }
 
-func doWork(name string)  {
+func doWork(name string) {
 	defer wg.Done()
 
 	for {
@@ -43,4 +43,3 @@ func doWork(name string)  {
 		}
 	}
 }
-

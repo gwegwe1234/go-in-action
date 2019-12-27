@@ -6,7 +6,7 @@ import (
 	"sync"
 )
 
-func main()  {
+func main() {
 	// 스케쥴러가 하나의 논리 프로세서를 할당
 	runtime.GOMAXPROCS(runtime.NumCPU())
 

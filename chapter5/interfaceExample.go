@@ -7,14 +7,14 @@ import (
 	"os"
 )
 
-func init()  {
+func init() {
 	if len(os.Args) != 2 {
 		fmt.Println("사용법 : ./interfaceExample <url>")
 		os.Exit(-1)
 	}
 }
 
-func main()  {
+func main() {
 	r, err := http.Get(os.Args[1])
 	if err != nil {
 		fmt.Println(err)
@@ -22,7 +22,7 @@ func main()  {
 	}
 
 	io.Copy(os.Stdout, r.Body)
-	if err := r.Body.Close(); err != nil{
+	if err := r.Body.Close(); err != nil {
 		fmt.Println(err)
 	}
 }

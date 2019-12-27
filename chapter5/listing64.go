@@ -8,7 +8,7 @@ func (d *duration) pretty() string {
 	return fmt.Sprintf("기간 : %d", *d)
 }
 
-func main()  {
+func main() {
 	duration(42).pretty()
 
 	//src/github.com/gwegwe1234/go-in-action/chapter5/listing64.go:12:14: cannot call pointer method on duration(42)

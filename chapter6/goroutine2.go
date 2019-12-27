@@ -8,7 +8,7 @@ import (
 
 var wg sync.WaitGroup
 
-func main()  {
+func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 
 	wg.Add(2)
@@ -22,19 +22,19 @@ func main()  {
 	fmt.Println("Done")
 }
 
-func printPrime(prefix string)  {
+func printPrime(prefix string) {
 	defer wg.Done()
 
-	next:
-		for outer := 2; outer < 100000; outer++ {
-			for inner := 2; inner < outer; inner++ {
-				if outer % inner == 0 {
-					continue next
-				}
+next:
+	for outer := 2; outer < 100000; outer++ {
+		for inner := 2; inner < outer; inner++ {
+			if outer%inner == 0 {
+				continue next
 			}
-			fmt.Printf("%s:%d\n", prefix, outer)
 		}
+		fmt.Printf("%s:%d\n", prefix, outer)
+	}
 
-		fmt.Println("완료: ", prefix)
+	fmt.Println("완료: ", prefix)
 
 }

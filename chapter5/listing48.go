@@ -7,12 +7,12 @@ type notifier interface {
 }
 
 type user struct {
-	name string
+	name  string
 	email string
 }
 
 type admin struct {
-	name string
+	name  string
 	email string
 }
 
@@ -24,7 +24,7 @@ func (u *user) notify() {
 	fmt.Printf("사용자에게 메세지를 전달합니다. : %s<%s>\n", u.name, u.email)
 }
 
-func main()  {
+func main() {
 	jade := user{"jade.jjj", "jade.jjj@kikiki.com"}
 	judy := admin{"judy.jucie", "judy.juice@qwert.com"}
 
@@ -32,6 +32,6 @@ func main()  {
 	sendNotification(&judy)
 }
 
-func sendNotification(n notifier)  {
+func sendNotification(n notifier) {
 	n.notify()
 }

@@ -11,13 +11,13 @@ var (
 	wg sync.WaitGroup
 )
 
-func init()  {
+func init() {
 	rand.Seed(time.Now().UnixNano())
 }
 
-func main()  {
+func main() {
 	court := make(chan int)
-	
+
 	wg.Add(2)
 
 	// 두명의 선수
@@ -29,12 +29,12 @@ func main()  {
 	wg.Wait()
 }
 
-func player(name string, court chan int)  {
+func player(name string, court chan int) {
 	defer wg.Done()
 
 	for {
 		// 공이 되돌아 올 때까지 기다린다.
-		ball, ok := <- court
+		ball, ok := <-court
 		if !ok {
 			// 채널이 닫혔으면 승리한 것으로 간주한다.
 			fmt.Printf("%s 선수가 승리했습니다! \n", name)

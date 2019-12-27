@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main()  {
+func main() {
 	slice := []int{10, 20, 30, 40, 50}
 
 	slice[1] = 15

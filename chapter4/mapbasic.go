@@ -2,12 +2,12 @@ package main
 
 import "fmt"
 
-func main()  {
+func main() {
 	// string key , int value
 	dict := make(map[string]int)
 
 	//string key, string value
-	dict2 := map[string]string{"Red" : "red", "Orange" : "orange"}
+	dict2 := map[string]string{"Red": "red", "Orange": "orange"}
 
 	// 빈 맵 생성
 	colors := map[string]string{}

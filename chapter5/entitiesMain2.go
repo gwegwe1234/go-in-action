@@ -5,7 +5,7 @@ import (
 	"github.com/webgenie/go-in-action/chapter5/listing74/entities"
 )
 
-func main()  {
+func main() {
 	a := entities.Admin{
 		Rights: 3,
 	}

@@ -6,7 +6,7 @@ import (
 	"github.com/gwegwe1234/go-in-action/chapter5/counters"
 )
 
-func main()  {
+func main() {
 	//counter := counters.alertCounter(10)
 
 	counter := counters.New(10)

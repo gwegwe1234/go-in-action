@@ -13,7 +13,7 @@ var (
 	wg sync.WaitGroup
 )
 
-func main()  {
+func main() {
 	wg.Add(2)
 
 	go incCounter(1)
@@ -24,7 +24,7 @@ func main()  {
 	fmt.Println("Result : ", counter)
 }
 
-func incCounter(id int)  {
+func incCounter(id int) {
 	defer wg.Done()
 
 	for count := 0; count < 2; count++ {

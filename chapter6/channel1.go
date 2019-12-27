@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main()  {
+func main() {
 	// 버퍼의 크기가 정해지지 않은 정수 채널
 	unbuffered := make(chan int)
 
@@ -11,7 +11,7 @@ func main()  {
 
 	buffered <- "Gopher"
 
-	value := <- buffered
+	value := <-buffered
 
 	fmt.Printf(value)
 }

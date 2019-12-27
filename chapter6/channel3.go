@@ -8,7 +8,7 @@ import (
 
 var wg sync.WaitGroup
 
-func main()  {
+func main() {
 	baton := make(chan int)
 
 	wg.Add(1)
@@ -21,11 +21,11 @@ func main()  {
 	wg.Wait()
 }
 
-func Runner(baton chan int)  {
+func Runner(baton chan int) {
 	var newRunner int
 
 	// 바통을 전달 받을 때 까지 기다린다.
-	runner := <- baton
+	runner := <-baton
 
 	// 트랙을 달린다.
 	fmt.Printf("%d 번째 주자가 바통을 받아 달리기 시작합니다! \n", runner)

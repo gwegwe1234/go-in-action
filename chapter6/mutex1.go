@@ -14,7 +14,7 @@ var (
 	mutex sync.Mutex
 )
 
-func main()  {
+func main() {
 
 	wg.Add(2)
 
@@ -26,7 +26,7 @@ func main()  {
 
 }
 
-func incCounter(id int)  {
+func incCounter(id int) {
 
 	defer wg.Done()
 

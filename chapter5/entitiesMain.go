@@ -5,12 +5,12 @@ import (
 	"github.com/gwegwe1234/go-in-action/chapter5/entities"
 )
 
-func main()  {
+func main() {
 	// entities 패키지내의 User 구조체 가져온다.
 
 	riley := entities.User{
-		Name : "Riley.life",
-		email : "Riley.life@email.com",
+		Name:  "Riley.life",
+		email: "Riley.life@email.com",
 	}
 
 	fmt.Println(riley)

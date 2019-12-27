@@ -7,11 +7,11 @@ type notifier interface {
 }
 
 type user struct {
-	name string
+	name  string
 	email string
 }
 
-func (u *user) notify()  {
+func (u *user) notify() {
 	fmt.Printf("사용자에게 메일을 전송합니다: %s<%s>\n", u.name, u.email)
 }
 
@@ -20,19 +20,18 @@ type admin struct {
 	level string
 }
 
-func (u *admin) notify()  {
+func (u *admin) notify() {
 	fmt.Printf("관리자에게 메일을 전송합니다: %s<%s>\n", u.name, u.email)
 }
 
-func main()  {
+func main() {
 	// admin 타입의 사용자를 생성
-	bennie := admin {
-		user : user{
-			name : "bennie.maru",
-			email : "bennie.maru@ddeokboggi.com",
-
+	bennie := admin{
+		user: user{
+			name:  "bennie.maru",
+			email: "bennie.maru@ddeokboggi.com",
 		},
-		level : "super",
+		level: "super",
 	}
 
 	// 이 경우 포함된 내부 타입이 구현한 인터페이스가 외부 타입으로 승격되지 않는다

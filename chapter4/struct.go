@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main()  {
+func main() {
 	var array [5]int
 	array2 := [5]int{1, 2, 3, 4, 5}
 	array3 := [...]int{1, 2, 3, 4, 5}
@@ -28,7 +28,6 @@ func main()  {
 	array8 = array7
 
 	fmt.Println(array8)
-
 
 	var array9 [3]*string
 

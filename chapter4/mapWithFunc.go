@@ -2,10 +2,10 @@ package main
 
 import "fmt"
 
-func main()  {
+func main() {
 	colors := map[string]string{
-		"Red" : "red",
-		"Yellow" : "yellow",
+		"Red":    "red",
+		"Yellow": "yellow",
 	}
 
 	for _, value := range colors {
@@ -19,6 +19,6 @@ func main()  {
 	}
 }
 
-func removeColor(colors map[string]string)  {
+func removeColor(colors map[string]string) {
 	delete(colors, "Red")
 }

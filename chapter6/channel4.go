@@ -9,23 +9,23 @@ import (
 
 const (
 	nuberGoroutines = 4
-	taskLoad = 10
+	taskLoad        = 10
 )
 
 var wg sync.WaitGroup
 
-func init()  {
+func init() {
 	rand.Seed(time.Now().Unix())
 }
 
-func main()  {
+func main() {
 	// 버퍼가 있는 채널 생성
 	tasks := make(chan string, taskLoad)
 
 	wg.Add(nuberGoroutines)
 
 	// 작업을 처리할 고루틴을 실행한다.
-	for gr := 1 ; gr <= nuberGoroutines; gr++ {
+	for gr := 1; gr <= nuberGoroutines; gr++ {
 		go worker(tasks, gr)
 	}
 
@@ -44,7 +44,7 @@ func worker(tasks chan string, worker int) {
 
 	for {
 		// 작업이 할당될 때까지 대기한다.
-		task, ok := <- tasks
+		task, ok := <-tasks
 
 		if !ok {
 			// 채널이 닫힌 경우
